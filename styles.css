@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  place-items: center;
+  height: 100dvh;
+}
+.container {
+  position: relative;
+  width: 300px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.bg {
+  display: block;
+  width: 100%;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 40px 20px 20px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(37, 10, 101, 0) 1%,
+    rgba(255, 255, 255, 0.5) 7%,
+    rgba(255, 255, 255, 0.7) 23%,
+    rgba(255, 255, 255, 0.9) 50%
+  );
+  transform: translateY(300px);
+  transition: all 0.3s ease-out;
+  height: 100%;
+}
+.container:hover .overlay {
+  transform: translateY(0px);
+  background: linear-gradient(
+    180deg,
+    rgba(36, 4, 111, 0.3) 1%,
+    rgba(36, 4, 111, 0.5) 15%,
+    rgba(36, 4, 111, 0.6) 30%,
+    rgba(36, 4, 111, 0.7) 50%
+  );
+  color: white;
+}
+.title {
+  padding-bottom: 20px;
+}
+.description {
+  transition: all 0.1s ease-out;
+  overflow: hidden;
+  opacity: 1;
+}
+.description__hover {
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.1s ease-out;
+  opacity: 0;
+}
+.container:hover .description {
+  height: 0;
+  opacity: 0;
+}
+.container:hover .description__hover {
+  height: auto;
+  opacity: 1;
+}
